@@ -50,7 +50,11 @@ a{color:#70283a}
 <p class="notice" id="message">Registration interface preview. Secure account creation will be activated when the backend is connected.</p>
 <p>Already registered? <a href="index.html">Go back home</a></p>
 </div>
-<script>
+<script>const selectedRole = new URLSearchParams(window.location.search).get("role");
+
+if (selectedRole === "seller" || selectedRole === "customer") {
+  document.getElementById("role").value = selectedRole;
+}
 document.getElementById("registerForm").addEventListener("submit",function(e){
 e.preventDefault();
 document.getElementById("message").textContent=
