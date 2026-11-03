@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GOD FIRST MARKETPLACE</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#f8f0e8;color:#351b25}
+header{background:#70283a;color:white;padding:22px;text-align:center}
+header h2{color:#c99b4b;margin:0}
+header p{font-size:11px;letter-spacing:2px}
+nav{background:white;padding:15px;text-align:center}
+nav a{color:#70283a;margin:10px;text-decoration:none;font-weight:bold}
+.hero{padding:55px 20px;text-align:center;background:#70283a;color:white}
+.hero h1{font-size:36px}
+.hero span{color:#c99b4b}
+button{background:#c99b4b;color:#351b25;border:0;padding:12px 18px;border-radius:6px;font-weight:bold}
+section{padding:25px 16px}
+h2{color:#70283a}
+.products{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.product{background:white;padding:15px;border-radius:10px;text-align:center}
+.product .pic{font-size:45px;padding:15px;background:#f8f0e8}
+.product button{width:100%}
+footer{background:#351b25;color:white;text-align:center;padding:25px}
+</style>
+</head>
+<body>
+<header>
+<h2>♛ GOD FIRST MARKETPLACE</h2>
+<p>POWERED BY GOD FIRST ENTERPRISE</p>
+</header>
+<nav>
+<a href="#">Home</a>
+<a href="#shop">Shop</a>
+<a href="#sell">Sell</a>
+<a href="#account">Account</a>
+</nav>
+<div class="hero">
+<h1>SHOP. <span>SELL.</span> CONNECT.</h1>
+<p>Discover amazing products from sellers across Nigeria.</p>
+<button onclick="location.href='#shop'">START SHOPPING</button>
+</div>
+<section id="shop">
+<h2>Explore Products 🛍️</h2>
+<div class="products" id="products"></div>
+<h3 id="total">Cart: ₦0</h3>
+</section>
+<section id="sell">
+<h2>Become a Seller 👑</h2>
+<p>Open your own shop and reach customers across Nigeria.</p>
+<button onclick="location.href='#account'">START SELLING</button>
+</section>
+<section id="account">
+<h2>Join GOD FIRST MARKETPLACE</h2>
+<p>Create your customer or seller account.</p>
+<button onclick="alert('Account registration is coming soon!')">REGISTER</button>
+</section>
+<footer>
+<h3>GOD FIRST MARKETPLACE</h3>
+<p>Shop with purpose. Sell with confidence.</p>
+<p>© 2026 GOD FIRST ENTERPRISE</p>
+</footer>
+<script>
+const items=[
+["Fashion Set","18500","👕"],
+["Sneakers","24000","👟"],
+["Headphones","32000","🎧"],
+["Handbag","21500","👜"],
+["Beauty Kit","9800","💄"],
+["Smart Watch","45000","⌚"]
+];
+let total=0;
+document.getElementById("products").innerHTML=items.map((p,i)=>`
+<div class="product">
+<div class="pic">${p[2]}</div>
+<h3>${p[0]}</h3>
+<p>₦${Number(p[1]).toLocaleString()}</p>
+<button onclick="add(${i})">Add to cart</button>
+</div>`).join("");
+function add(i){
+total+=Number(items[i][1]);
+document.getElementById("total").innerText="Cart: ₦"+total.toLocaleString();
+}
+</script>
+</body>
+</html>
