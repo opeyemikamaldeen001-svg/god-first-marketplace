@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join GOD FIRST MARKETPLACE</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f8f0e8;font-family:Arial;color:#351b25;padding:25px 15px}
+.container{max-width:430px;margin:35px auto;background:white;padding:28px;border-radius:14px;box-shadow:0 5px 25px #0001}
+h2{text-align:center;color:#70283a}
+.brand{text-align:center;color:#c99b4b;font-weight:bold}
+p{text-align:center;color:#777;font-size:13px}
+label{display:block;margin-top:17px;font-size:13px;font-weight:bold}
+input,select{width:100%;padding:13px;margin-top:7px;border:1px solid #ddd;border-radius:7px;font-size:15px}
+button{width:100%;padding:14px;margin-top:23px;background:#70283a;color:white;border:0;border-radius:7px;font-weight:bold;font-size:15px}
+a{color:#70283a}
+.notice{font-size:11px;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="brand">♛ GOD FIRST ENTERPRISE</div>
+<h2>Create Your Account</h2>
+<p>Welcome to GOD FIRST MARKETPLACE 🛍️</p>
+
+<form id="registerForm">
+<label>Full Name</label>
+<input type="text" placeholder="Enter your full name" required>
+
+<label>Email Address</label>
+<input type="email" placeholder="Enter your email" required>
+
+<label>Phone Number</label>
+<input type="tel" placeholder="Enter your phone number" required>
+
+<label>Password</label>
+<input type="password" placeholder="Create a password" minlength="8" required>
+
+<label>Account Type</label>
+<select id="role" required>
+<option value="">Choose account type</option>
+<option value="customer">Customer</option>
+<option value="seller">Seller</option>
+</select>
+
+<button type="submit">CREATE ACCOUNT</button>
+</form>
+
+<p class="notice" id="message">Registration interface preview. Secure account creation will be activated when the backend is connected.</p>
+<p>Already registered? <a href="index.html">Go back home</a></p>
+</div>
+<script>
+document.getElementById("registerForm").addEventListener("submit",function(e){
+e.preventDefault();
+document.getElementById("message").textContent=
+"Your registration screen is ready. Account creation will be activated after secure backend integration.";
+});
+</script>
+</body>
+</html>
